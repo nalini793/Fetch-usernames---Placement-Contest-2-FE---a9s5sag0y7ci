@@ -8,8 +8,12 @@ const App = () => {
   const url = "https://content.newtonschool.co/v1/pr/main/users";
 
   function changeInput(e) {
-    const id = e.target.value;
-    setName(user[id - 1].name);
+     const id = e.target.value;
+    if (id = '') {
+      setName('')
+    } else {
+      setName(user[id - 1].name);
+    }
   }
   useEffect(() => {
     fetch(url)
